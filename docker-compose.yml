@@ -1,0 +1,63 @@
+version: "3.9"
+name: tacto
+
+networks:
+    tacto:
+
+services:
+
+    nginx:
+        image: nginx:stable
+        volumes: 
+            - ./html:/var/www/html
+            - ./default.conf:/etc/nginx/conf.d/default.conf
+        ports:
+            - 80:80
+        restart: always
+        depends_on:
+            - php
+            - mysql
+        networks:
+            - tacto
+
+    php:
+        build: 
+            context: .
+            dockerfile: ./Dockerfile-php
+        volumes: 
+            - ./html:/var/www/html
+        ports:
+            - 9000:9000
+        restart: always
+        networks:
+            - tacto
+
+    mysql:
+        image: mysql:latest
+        volumes: 
+            - ./mysql:/var/lib/mysql
+        ports:
+            - 3306:3306
+        restart: always
+        environment:
+            - MYSQL_DATABASE=tacto
+            - MYSQL_USER=admin
+            - MYSQL_PASSWORD=secret
+            - MYSQL_ROOT_PASSWORD=secret
+        networks:
+            - tacto
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        environment:
+            PMA_HOST: mysql
+            PMA_USER: admin
+            PMA_PASSWORD: secret
+        ports:
+            - "38001:80"
+        restart: always
+        networks:
+            - tacto
+        depends_on:
+            - php
+            - mysql
