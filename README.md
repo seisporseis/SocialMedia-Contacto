@@ -1,3 +1,3 @@
-##Proyecto Tacto
-
-Para generar la carpeta Mysql, abrir el PHPMyAdmyn. Se genera automaticamente. 
+##ConTacto - Una red social para programadores
+El cliente nos pidió: 
+(poner aquí requisitos)
