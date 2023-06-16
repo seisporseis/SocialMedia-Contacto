@@ -18,5 +18,19 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        \App\Models\User::insert([
+            'name' => "raul",
+            'username' => "raul",
+            'email' => "raul@luar.com",
+            'password' => '$2y$10$WXyYfj2PdcMpcNy.r0HOiuv3dT7d1.xjrM1bhko0KcVdWQn.fQ6MW',
+        ]);
+
+        \App\Models\User::insert([
+            'name' => "raul",
+            'username' => "raul",
+            'email' => "raul@luar.com",
+            'password' => '$2y$10$WXyYfj2PdcMpcNy.r0HOiuv3dT7d1.xjrM1bhko0KcVdWQn.fQ6MW',
+        ]);
     }
 }
