@@ -9,12 +9,11 @@
         @vite('resources/css/app.css')
     </head>
 
-    <body class="bg-gray-100">
-        <header class="p-5 border-b bg-white shadow">
+    <body class="bg-white">
+        <header class="p-5 bg-white">
             <div class="container mx-auto flex justify-between">
-                <h1 class="text-3xl font-black">
-                    ConTacto
-                </h1>
+                <img src="{{ asset('img/logo-contacto-purple.png') }}" alt="LogoContacto">
+
 
                 {{-- Si esta autenticado  --}}
                 @auth
@@ -48,27 +47,26 @@
                 @endauth
                 {{-- Si no esta autenticado --}}
                 @guest
-                    <nav class="flex gap-2 items-center">
-                        <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('login') }}">Login</a>
-                        <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('register') }}">
-                            Crear Cuenta
+                    <nav class="flex gap-5 items-center">
+                        <a class="font-bold text-indigo-400 text-sm" href="{{ route('login') }}">Login</a>
+                        <a class="font-bold text-indigo-400 text-sm" href="{{ route('register') }}">
+                            Crea tu cuenta
                         </a>
                     </nav>
                 @endguest
-
 
             </div>
         </header>
 
         <main class="container mx-auto mt-10">
-            <h2 class="font-black text-center text-3xl mb-10">
+            <!-- <h2 class="font-black text-center text-3xl mb-10">
                 @yield('titulo')
-            </h2>
+            </h2> -->
             @yield('contenido')
         </main>
 
-        <footer class="mt-10 text-center p-5 text-gray-500 font-bold uppercase">
-            ConTacto - Todos los derechos reservados
+        <footer class="mt-10 text-center p-5 text-black font-light">
+            ConTacto - Compartir código nunca fue tan fácil.
             {{ now()->year }}
         </footer>
     </body>
