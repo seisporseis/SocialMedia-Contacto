@@ -26,7 +26,7 @@ class LoginController extends Controller
             return back()->with('mensaje', 'Credenciales incorrectas');
         }
         //si retorna true
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index', auth()->user()->name);
     }
 }
 // $request -> remember = compara si es el mismo, si positivo, mantiene el usuario conectado - Cookie. En la base de datos se ve llenado en 'token'
