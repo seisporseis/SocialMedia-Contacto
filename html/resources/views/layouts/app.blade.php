@@ -9,14 +9,14 @@
         @vite('resources/css/app.css')
     </head>
 
-    <body class="bg-white">
-        <header class="p-5 bg-white">
+    <body class="bg-white font-sans max-[320px]:bg-purple">
+        <header class="p-5 bg-white max-[320px]:bg-purple ">
             <div class="container mx-auto flex justify-between">
                 <img src="{{ asset('img/logo-contacto-purple.png') }}" alt="LogoContacto">
 
                 <nav class="flex gap-5 items-center">
-                    <a class="font-bold text-indigo-400 text-sm" href="#">Login</a>
-                    <a class="font-bold text-indigo-400 text-sm" href="{{ route('register') }}">Crea tu cuenta</a>
+                    <a class=" text-purple max-[320px]:text-white text-sm" href="#">Login</a>
+                    <a class=" text-purple max-[320px]:text-white text-sm" href="{{ route('register') }}">Crea tu cuenta</a>
                 </nav>
             </div>
         </header>

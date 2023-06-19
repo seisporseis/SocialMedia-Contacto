@@ -6,7 +6,7 @@
 
 @section('contenido')
     <div class="md:flex md:justify-center md:gap-10">
-        <div class="md:w-5/12 bg-white p-6 rounded-lg">
+        <div class="md:w-5/12 p-6">
             <form action="{{ route('register') }}" method="POST" novalidate>
                 @csrf
 
@@ -25,7 +25,7 @@
                         name="name"
                         placeholder="tu nombre"
                         type="text"
-                        class="border p-3 w-full rounded-lg  @error('name') border-red-500 @enderror"
+                        class="placeholder:text-gray placeholder:font-thin placeholder:text-sm border border-gray p-3 w-full rounded-lg  @error('name') border-red-500 @enderror"
                         value="{{ old('name') }}"
                     
                         />
@@ -64,7 +64,7 @@
                         name="email"
                         placeholder="example@mail.com"
                         type="email"
-                        class="border p-3 w-full rounded-lg @error('email') border-red-500 @enderror"
+                        class="placeholder:text-gray placeholder:font-thin placeholder:text-sm border border-gray p-3 w-full rounded-lg @error('email') border-red-500 @enderror"
                         value="{{ old('email') }}"
                     />
                     @error('email')
@@ -83,7 +83,7 @@
                         name="password"
                         placeholder="mínimo 8 carácteres"
                         type="password"
-                        class="border p-3 w-full rounded-lg @error('password') border-red-500 @enderror"
+                        class="placeholder:text-gray placeholder:font-thin placeholder:text-sm border border-gray p-3 w-full rounded-lg @error('password') bg-red @enderror"
                     />
                     @error('password')
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
@@ -109,13 +109,13 @@
                 <input 
                     type="submit"
                     value="Crear Cuenta"
-                    class="bg-yellow-300 hover:bg-yellow-400 transition-colors cursor-pointer font-bold w-full p-3 text-purple-400 rounded-lg"
+                    class="bg-yellow hover:bg-yellow-dark transition-colors cursor-pointer font-bold w-full p-3 text-purple-400 rounded-lg"
                 />
 
             </form>
         </div>
 
-        <div class="md:w-5/12 bg-violet-400 rounded-lg">
+        <div class=" visible max-[320px]:invisible md:w-5/12 bg-purple rounded-lg">
             <img class="object-cover" src="{{asset('img/bg-contacto.png') }}" alt="Imagen registro usuarios">
         </div>
 
