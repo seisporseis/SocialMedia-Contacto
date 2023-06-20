@@ -5,8 +5,21 @@ export default {
     "./resources/**/*.js"
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      'sans': ['Lato', 'sans-serif'],
   },
+  colors: {
+    'blue': '#001F5F',
+    'purple': '#5F67B9',
+    'light-purple': '#ABC2F2',
+    'yellow': '#FFC836',
+    'yellow-dark': '#e8af17',
+    'gray-dark': '#151619',
+    'gray': '#5C5D66',
+    'white': '#ffffff',
+    'red': '#b42818',
+    'green': '#357e38',
+  },
+},
   plugins: [],
 }
-
