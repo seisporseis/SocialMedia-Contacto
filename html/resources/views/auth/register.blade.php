@@ -36,16 +36,16 @@
                     @enderror
                 </div>
 
-                <!-- <div class="mb-5">
-                    <label for="username" class="mb-2 block uppercase text-gray-500 font-bold">
+                <div class="mb-5">
+                    <label for="username" class="mb-2 block text-gray-dark font-bold">
                         Username
                     </label>
                     <input 
                         id="username"
                         name="username"
-                        placeholder="Tu Nombre de Usuario"
+                        placeholder="elige tu nombre de usuario"
                         type="text"
-                        class="border p-3 w-full rounded-lg @error('username') border-red-500 @enderror"
+                        class="placeholder:text-gray placeholder:font-thin placeholder:text-sm border border-gray p-3 w-full rounded-lg @error('username') border-red-500 @enderror"
                         value="{{ old('username') }}"
                     />
                     @error('username')
@@ -53,10 +53,10 @@
                         {{ $message }}
                     </p>
                     @enderror
-                </div> -->
+                </div>
 
                 <div class="mb-5">
-                    <label for="email" class="mb-2 block text-slate-950 font-bold">
+                    <label for="email" class="mb-2 block text-gray-dark font-bold">
                         Email
                     </label>
                     <input 
@@ -75,8 +75,8 @@
                 </div>
 
                 <div class="mb-5">
-                    <label for="password" class="mb-2 block text-slate-950 font-bold">
-                        Password
+                    <label for="password" class="mb-2 block text-gray-dark font-bold">
+                        Contraseña
                     </label>
                     <input 
                         id="password"
@@ -92,19 +92,24 @@
                     @enderror
                 </div>
 
-                <!-- <div class="mb-5">
-                    <label for="password_confirmation" class="mb-2 block uppercase text-gray-500 font-bold">
-                        Repetir Password
+                <div class="mb-5">
+                    <label for="password_confirmation" class="mb-2 block text-gray-dark font-bold">
+                        Repetir Contraseña
                     </label>
                     <input 
                         type="password"
                         id="password_confirmation"
                         name="password_confirmation"
-                        placeholder="Repite tu Password"
+                        placeholder="Repite tu contraseña"
                         class="border p-3 w-full rounded-lg"
                     />
                     {{-- "confirmation" en id / name es un nombre obligatorio para validacion --}}
-                </div> -->
+                </div>
+
+                <div class="mb-5">
+                    <input type="checkbox" name="remember">
+                    <label class="text-gray-dark text-sm">Acepto las políticas y términos de privacidad</label>
+                </div>
 
                 <input 
                     type="submit"

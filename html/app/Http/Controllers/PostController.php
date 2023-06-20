@@ -17,7 +17,7 @@ class PostController extends Controller
     public function index(User $user)
     {
         return view('dashboard', [
-            'user' => $user
+            'username' => $user
         ]);
     }
 
@@ -45,6 +45,6 @@ class PostController extends Controller
             'user_id' => auth() -> user() ->id
         ]);
 
-        return redirect()->route('posts.index', auth()->user()->name);
+        return redirect()->route('posts.index', auth()->user()->username);
     }
 }
