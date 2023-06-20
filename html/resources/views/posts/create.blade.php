@@ -6,24 +6,24 @@
 
 @section('contenido')
     <div class="md:flex md:items-center">
-        <div class="md:w-1/2 px-10">
+        <!-- <div class="md:w-1/2 px-10">
             imagen aqui
-        </div>
+        </div> -->
 
-        <div class="md:w-1/2 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0">
+        <div class="mx-auto md:w-1/2 p-10 rounded-lg border-2 mt-10 md:mt-0">
             <form action="{{ route('posts.create') }}" method="POST" novalidate>
                 @csrf
 
                 <div class="mb-5">
-                    <label for="titulo" class="mb-2 block uppercase text-gray-500 font-bold">
+                    <label for="titulo" class="mb-2 block text-dark-gray font-normal">
                         Titulo
                     </label>
                     <input 
                         id="titulo"
                         name="titulo"
-                        placeholder="Titulo de la publicación"
+                        placeholder="Dale un nombre a tu snippet"
                         type="text"
-                        class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror"
+                        class="placeholder:font-thin border border-gray p-3 w-full rounded-lg @error('name') border-red-500 @enderror"
                         value="{{ old('titulo') }}"
                     
                         />
@@ -35,14 +35,14 @@
                 </div>
 
                 <div class="mb-5">
-                    <label for="descripcion" class="mb-2 block uppercase text-gray-500 font-bold">
+                    <label for="descripcion" class="mb-2 block text-dark-gray font-normal">
                         Descripción
                     </label>
                     <textarea
                         id="descripcion"
                         name="descripcion"
-                        placeholder="Descripción de la publicación"
-                        class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror"
+                        placeholder="Copia aquí tu código"
+                        class="border border-gray p-4 w-full rounded-lg @error('name') border-red-500 @enderror"
                     >
                     {{ old('descripcion') }}
                     </textarea>
@@ -55,8 +55,8 @@
 
                 <input 
                 type="submit"
-                value="Crear Publicación"
-                class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"
+                value="Publicar"
+                class="bg-yellow hover:bg-yellow-dark transition-colors cursor-pointer font-bold w-full p-3 text-purple rounded-lg"
                 />
 
             </form>

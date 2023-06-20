@@ -6,7 +6,7 @@
 
 @section('contenido')
     <div class="md:flex md:justify-center md:gap-10 md:items-center">
-        <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
+        <div class="md:w-5/12 p-6">
             <form method="POST" action="{{ route('login') }}" novalidate>
                 @csrf
 
@@ -25,7 +25,7 @@
 
 
                 <div class="mb-5">
-                    <label for="email" class="mb-2 block uppercase text-gray-dark font-bold">
+                    <label for="email" class="mb-2 block text-gray-dark font-bold">
                         Email
                     </label>
                     <input 
@@ -45,7 +45,7 @@
 
 
                 <div class="mb-5">
-                    <label for="password" class="mb-2 block uppercase text-gray-dark font-bold">
+                    <label for="password" class="mb-2 block text-gray-dark font-bold">
                         Contraseña
                     </label>
                     <input 
@@ -77,7 +77,7 @@
             </form>
         </div>
 
-        <div class=" visible max-[320px]:invisible md:w-5/12 bg-purple rounded-lg">
+        <div class=" max-[320px]:hidden md:w-5/12 bg-purple rounded-lg">
             <img class="object-cover" src="{{asset('img/bg-contacto.png') }}" alt="Imagen registro usuarios">
         </div>
 

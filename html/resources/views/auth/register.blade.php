@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="mb-5">
-                    <label for="name" class="mb-2 block text-slate-950 font-bold">
+                    <label for="name" class="mb-2 block text-gray-dark font-bold">
                         Nombre
                     </label>
                     <input 
@@ -100,8 +100,8 @@
                         type="password"
                         id="password_confirmation"
                         name="password_confirmation"
-                        placeholder="Repite tu contraseña"
-                        class="border p-3 w-full rounded-lg"
+                        placeholder="repite tu contraseña"
+                        class="placeholder:text-gray placeholder:font-thin placeholder:text-sm border border-gray p-3 w-full rounded-lg"
                     />
                     {{-- "confirmation" en id / name es un nombre obligatorio para validacion --}}
                 </div>
@@ -120,8 +120,8 @@
             </form>
         </div>
 
-        <div class=" visible max-[320px]:invisible md:w-5/12 bg-purple rounded-lg">
-            <img class="object-cover" src="{{asset('img/bg-contacto.png') }}" alt="Imagen registro usuarios">
+        <div class="max-[320px]:hidden md:w-5/12 bg-purple rounded-lg">
+            <img class="bg-cover bg-center" src="{{asset('img/bg-contacto.png') }}" alt="Imagen registro usuarios">
         </div>
 
     </div>

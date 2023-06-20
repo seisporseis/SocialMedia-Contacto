@@ -15,24 +15,24 @@
                 <img src="{{ asset('img/logo-contacto-purple.png') }}" alt="LogoContacto">
 
             @auth
-                <nav class="flex gap-2 intems-center">
-                    <a href="{{ route('posts')}}" class="flex items-center gap-2 bg-white border p-2 text-blue rounded text-sm uppercase font-bold cursor pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <nav class="flex gap-5 items-center">
+                    <a href="{{ route('posts.create')}}" class="flex items-center gap-1 bg-yellow border p-2 text-purple rounded text-xs font-normal cursor pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                     </svg>
-                        Crear
+                        Publicar
                     </a>
             
-                    <a href="{{ route('posts.index', auth()->user()->name ) }}" class="font-bold text-purple textt-sm">
-                        Hola 
-                        <span class="font-normal">
+                    <a href="{{ route('posts.index', auth()->user()->username ) }}" class="text-purple max-[320px]:text-white text-sm">
+                        Hola
+                        <span class="font-thin underline">
                             {{ auth()->user()->username }}
                         </span>
                     </a>
                     <form action="{{ route('logout') }}" method="post">
                     @csrf
-                        <button type="submit" class="font-bold text-purple text-sm">Cerrar sesión 
-
+                        <button type="submit" class="text-purple max-[320px]:text-white text-sm">
+                            Cerrar sesión 
                         </button>
                     </form>
                 </nav>
@@ -43,8 +43,8 @@
                     <a class=" text-purple max-[320px]:text-white text-sm" href="{{ route('login') }}">Login</a>
                     <a class=" text-purple max-[320px]:text-white text-sm" href="{{ route('register') }}">Crea tu cuenta</a>
                 </nav>
-
             @endguest
+            
             </div>
         </header>
 
