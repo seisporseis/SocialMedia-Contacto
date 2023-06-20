@@ -21,13 +21,15 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\User::insert([
             'name' => "raul",
+            'username' => "raulluar",
             'email' => "raul@luar.com",
             'password' => '$2y$10$WXyYfj2PdcMpcNy.r0HOiuv3dT7d1.xjrM1bhko0KcVdWQn.fQ6MW',
         ]);
 
         \App\Models\User::insert([
             'name' => "raul",
-            'email' => "raul@luar.com",
+            'username' => "mariadiaz",
+            'email' => "maria@luar.com",
             'password' => '$2y$10$WXyYfj2PdcMpcNy.r0HOiuv3dT7d1.xjrM1bhko0KcVdWQn.fQ6MW',
         ]);
     }
