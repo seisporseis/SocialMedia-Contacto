@@ -16,8 +16,6 @@ class PostController extends Controller
     
     public function index(User $user)
     {
-        dd($user->id);
-        
         return view('dashboard', [
             'user' => $user
         ]);

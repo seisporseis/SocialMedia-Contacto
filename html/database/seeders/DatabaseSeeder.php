@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\User::insert([
-            'name' => "raul",
+            'name' => "maria",
             'username' => "mariadiaz",
             'email' => "maria@luar.com",
             'password' => '$2y$10$WXyYfj2PdcMpcNy.r0HOiuv3dT7d1.xjrM1bhko0KcVdWQn.fQ6MW',
