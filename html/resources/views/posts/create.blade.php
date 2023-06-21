@@ -60,7 +60,7 @@
                     class="bg-yellow hover:bg-yellow-dark transition-colors cursor-pointer font-bold p-3 text-purple py-2 px-4 mr-4 rounded-lg"
                     />
                 </div>
-               
+            
 
             </form>
         </div>

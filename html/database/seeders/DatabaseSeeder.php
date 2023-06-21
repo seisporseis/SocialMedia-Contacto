@@ -39,5 +39,15 @@ class DatabaseSeeder extends Seeder
             'email' => "carmen@prueba.com",
             'password' => '12345678',
         ]);
+
+        \App\Models\Post::insert([
+            'titulo' => "Visualizar los errores en Laravel",
+            'descripcion' => "codigo de laravel",
+        ]);
+
+        \App\Models\Post::insert([
+            'titulo' => "Nuevas funcionalidades del controller",
+            'descripcion' => "codigo de controller",
+        ]);
     }
 }
