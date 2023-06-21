@@ -3,21 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\File;
 
 class PostController extends Controller
 {
     //cuenta para usuario protegida con autenticacion, ejecutado antes del index
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['show', 'index']);
     }
     
     public function index(User $user)
     {
         
-        $posts = Post::where('user_id', $user->id)->paginate(5);
+        $posts = Post::where('user_id', $user->id)->paginate(4);
 
         return view('dashboard', [
             'user' => $user,
@@ -37,11 +38,11 @@ class PostController extends Controller
             'descripcion' => 'required',
         ]);
 
-        // Post::create([
-        //     'titulo' => $request->titulo,
-        //     'descripcion' => $request ->descripcion,
-        //     'user_id' => auth() -> user() ->id
-        // ]);
+        Post::create([
+             'titulo' => $request->titulo,
+             'descripcion' => $request ->descripcion,
+             'user_id' => auth() -> user() ->id
+         ]);
 
         $request->user()->posts()->create([
             'titulo' => $request->titulo,
