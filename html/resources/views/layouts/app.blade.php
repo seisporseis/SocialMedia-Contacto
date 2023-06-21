@@ -12,8 +12,9 @@
     <body class="bg-white font-sans max-[320px]:bg-purple">
         <header class="p-5 bg-white max-[320px]:bg-purple ">
             <div class="container mx-auto flex justify-between">
-                <img src="{{ asset('img/logo-contacto-purple.png') }}" alt="LogoContacto">
-
+                <a href="{{ route('home') }}">
+                    <img src="{{ asset('img/logo-contacto-purple.png') }}" alt="LogoContacto">
+                </a>    
             @auth
                 <nav class="flex gap-5 items-center">
                     <a href="{{ route('posts.create')}}" class="flex items-center gap-1 bg-yellow border p-2 text-purple rounded text-xs font-normal cursor pointer">

@@ -44,7 +44,7 @@
                         placeholder="Descripción de la publicación"
                         class="border p-3 w-full rounded-lg @error('name') border-red @enderror"
                     >
-                    {{ old('descripcion') }}
+                    {{ old('titulo') }}
                     </textarea>
                     @error('descripcion')
                         <p class="bg-red text-white my-2 rounded-lg text-sm p-2 text-center">
