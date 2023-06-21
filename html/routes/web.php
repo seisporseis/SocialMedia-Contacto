@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 // acessa una url y va al controlador
 
-Route::get('/', HomeController::class,)->name('home');
+Route::get('/', HomeController::class)->name('home');
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
@@ -36,7 +36,13 @@ Route::get('/posts/create', [PostController::class, 'create'])->name('posts.crea
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 Route::get('/{user:username}/posts/{post}', [PostController::class, 'show'])->name("posts.show");
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name("posts.destroy");
+Route::get('/{user:username}/posts/{post}', [PostController::class, 'show'])->name("posts.show");
 
-//Likes
 Route::post('/posts/{post}/likes', [LikeController::class, 'store'])->name("posts.likes.store");
 Route::delete('/posts/{post}/likes', [LikeController::class, 'destroy'])->name("posts.likes.destroy");
+
+
+
+
+
+
