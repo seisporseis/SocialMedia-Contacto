@@ -18,7 +18,7 @@ class PostController extends Controller
     public function index(User $user)
     {
         
-        $posts = Post::where('user_id', $user->id)->paginate(4);
+        $posts = Post::where('user_id', $user->id)->paginate(2);
 
         return view('dashboard', [
             'user' => $user,
@@ -38,17 +38,30 @@ class PostController extends Controller
             'descripcion' => 'required',
         ]);
 
-        Post::create([
-             'titulo' => $request->titulo,
-             'descripcion' => $request ->descripcion,
-             'user_id' => auth() -> user() ->id
-         ]);
+        // Post::create([
+        //      'titulo' => $request->titulo,
+        //      'descripcion' => $request ->descripcion,
+        //      'user_id' => auth() -> user() ->id
+        //  ]);
 
         $request->user()->posts()->create([
             'titulo' => $request->titulo,
             'descripcion' => $request ->descripcion,
             'user_id' => auth() -> user() ->id
         ]);
+
+        return redirect()->route('posts.index', auth()->user()->username);
+    }
+
+    public function show(User $user, Post $post)
+    {
+        return view("posts.show", ['post' => $post, 'user' => $user]);
+    }
+
+    public function destroy(Post $post)
+    {
+        $this->authorize('delete', $post); //Ejecuto una policy para determinar si el usuario es dueño del post
+        $post->delete(); // si es el dueño, entonces lo elimino
 
         return redirect()->route('posts.index', auth()->user()->username);
     }

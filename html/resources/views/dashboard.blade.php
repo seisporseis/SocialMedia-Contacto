@@ -36,11 +36,10 @@
     <section class="container mx-auto mt-10">
         <h2 class= "text-4xl text-center font-black my-10">Mis publicaciones</h2>
         @if ($posts->count())
-
-        @foreach($posts as $post)
-            <div class="bg-light-purple rounded-sm p-2 m-2">
+        
+        @foreach($posts as $post) 
+            <div class="bg-light-purple rounded-sm p-2 m-5">
                 <a href="{{ route('posts.show', ['post' => $post, 'user' => $user]) }}">
-
                     <h5 class="font-bold"> {{ $post->titulo }}</h5>
                     <p> {{ $post->descripcion}}</p>
 
