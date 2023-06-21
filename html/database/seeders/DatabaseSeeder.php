@@ -30,7 +30,14 @@ class DatabaseSeeder extends Seeder
             'name' => "maria",
             'username' => "mariadiaz",
             'email' => "maria@luar.com",
-            'password' => '$2y$10$WXyYfj2PdcMpcNy.r0HOiuv3dT7d1.xjrM1bhko0KcVdWQn.fQ6MW',
+            'password' => '123456789',
+        ]);
+
+        \App\Models\User::insert([
+            'name' => "carmen",
+            'username' => "carmenperez",
+            'email' => "carmen@prueba.com",
+            'password' => '12345678',
         ]);
     }
 }

@@ -2,7 +2,8 @@
 export default {
   content: [
     "./resources/**/*.blade.php",
-    "./resources/**/*.js"
+    "./resources/**/*.js",
+    "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php"
   ],
   theme: {
     fontFamily: {
@@ -18,8 +19,8 @@ export default {
     'gray': '#5C5D66',
     'white': '#ffffff',
     'red': '#b42818',
-    'green': '#357e38',
+    'green': '#357e38'
   },
 },
   plugins: [],
-}
+};

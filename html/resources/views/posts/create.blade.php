@@ -6,58 +6,61 @@
 
 @section('contenido')
     <div class="md:flex md:items-center">
-        <div class="md:w-1/2 px-10">
+        <!-- <div class="md:w-1/2 px-10">
             imagen aqui
-        </div>
+        </div> -->
 
-        <div class="md:w-1/2 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0">
+        <div class="mx-auto md:w-1/2 p-10 rounded-lg border mt-10 md:mt-0">
             <form action="{{ route('posts.create') }}" method="POST" novalidate>
                 @csrf
 
                 <div class="mb-5">
-                    <label for="titulo" class="mb-2 block uppercase text-gray-500 font-bold">
-                        Titulo
+                    <label for="titulo" class="mb-2 block text-gray">
+                        Nombra tu snippet
                     </label>
                     <input 
                         id="titulo"
                         name="titulo"
-                        placeholder="Titulo de la publicación"
+                        placeholder="¿De qué se trata lo que vas a compartir?"
                         type="text"
-                        class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror"
+                        class="placeholder:font-thin focus:border-purple border p-3 w-full rounded-lg @error('name') border-red @enderror"
                         value="{{ old('titulo') }}"
                     
                         />
                     @error('titulo')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                        <p class="bg-red text-white my-2 rounded-lg text-sm p-2 text-center">
                             {{ $message }}
                         </p>
                     @enderror
                 </div>
 
                 <div class="mb-5">
-                    <label for="descripcion" class="mb-2 block uppercase text-gray-500 font-bold">
-                        Descripción
+                    <label for="descripcion" class="mb-2 block text-gray">
+                        Pon aquí tu código
                     </label>
                     <textarea
                         id="descripcion"
                         name="descripcion"
                         placeholder="Descripción de la publicación"
-                        class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror"
+                        class="border p-3 w-full rounded-lg @error('name') border-red @enderror"
                     >
                     {{ old('titulo') }}
                     </textarea>
-                    @error('titulo')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                    @error('descripcion')
+                        <p class="bg-red text-white my-2 rounded-lg text-sm p-2 text-center">
                             {{ $message }}
                         </p>
                     @enderror
                 </div>
 
-                <input 
-                type="submit"
-                value="Crear Publicación"
-                class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"
-                />
+                <div class="mb-6">
+                    <input 
+                    type="submit"
+                    value="Publicar"
+                    class="bg-yellow hover:bg-yellow-dark transition-colors cursor-pointer font-bold p-3 text-purple py-2 px-4 mr-4 rounded-lg"
+                    />
+                </div>
+               
 
             </form>
         </div>
