@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@section('titulo')
-    Registrate en ConTacto
-@endsection
-
 @section('contenido')
     <div class="md:flex md:justify-center md:gap-10">
         <div class="md:w-5/12 p-6">

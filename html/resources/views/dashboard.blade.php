@@ -9,15 +9,21 @@
                 <img class="rounded-full bg-purple" src="{{ asset('img/usuario.png') }}" alt="imagen usuario" width="120" height="60">   
             </div>
 
+            <div class=" lg:w-6/12 px-5 flex flex-col items-center md:justify-center md:items-start py-5 md:py-10">
+                <p class="font-thin">Mi perfil</p> 
+                <p class="text-gray-dark text-2xl">{{ $user->name }}</p>   
+                <p class="text-gray-dark font-thin italic text-sm">@ {{ $user->username }}</p>  
+                
+            </div>
+
             <div class="md:w-8/12 lg:w-6/12 px-5 flex flex-col items-center md:justify-center md:items-start py-10 md:py-10">
-                <p class="text-gray-dark text-3xl">{{ $user->username }}</p>
                 
                 <p class="text-gray text-sm mb-3 font-bold mt-5">
-                    0
+                    100
                     <span class="font-thin">Seguidores</span>
                 </p>
                 <p class="text-gray text-sm mb-3 font-bold">
-                    0
+                    80
                     <span class="font-thin">Siguiendo</span>
                 </p>
                 <p class="text-gray text-sm mb-3 font-bold">
@@ -38,17 +44,24 @@
 
     <section class="container mx-auto mt-10">
         <h2 class= "text-4xl text-center font-black my-10">Mis publicaciones</h2>
-        @if ($posts->count())
-           
-         @foreach($posts as $post) 
-            <div class="bg-light-purple rounded-sm p-2 m-5">
-                <a href="{{ route('posts.show', ['post' => $post, 'user' => $user]) }}">
-                    <h5 class="font-bold"> {{ $post->titulo }}</h5>
-                    <p> {{ $post->descripcion}}</p>
 
-                </a>
-            </div>
-         @endforeach
+        @if ($posts->count())
+    <div class="grid grid-cols-2 grid-flow-row gap-5 p-10">
+        @foreach($posts as $post)
+        <div class="shadow-xl border border-gray rounded-lg">
+            <a href="{{ route('posts.show', ['post' => $post, 'user' => $user]) }}">
+                <div class="bg-light-purple rounded-t-lg p-2">
+                  <h5 class="font-normal pl-5">{{ $post->titulo }}</h5>  
+                </div>
+                <div class="p-5">
+                  <pre class="flex justify-start text-sm font-extralight text-gray">{{ $post->descripcion }}</pre>  
+                </div>
+                
+                
+            </a>
+        </div>
+        @endforeach
+    </div>
 
     <div class="my-10">
         {{ $posts->links('pagination::tailwind') }}

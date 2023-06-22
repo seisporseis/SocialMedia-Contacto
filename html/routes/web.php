@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
@@ -39,7 +40,6 @@ Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name("posts.
 Route::get('/{user:username}/posts/{post}', [PostController::class, 'show'])->name("posts.show");
 
 Route::post('/{user:username}/posts/{post}', [ComentarioController::class, 'store'])->name("comentarios.store");
-
 
 //Likes
 Route::post('/posts/{post}/likes', [LikeController::class, 'store'])->name("posts.likes.store");

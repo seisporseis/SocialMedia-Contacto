@@ -6,9 +6,12 @@
 
 @section('contenido')
 <div class=" md:full flex justify-center mb-2 gap-1">
-    <p class="font-normal text-blue text-sm text-center italic">{{ $post->user->username }}</p>
+    <a href="{{ route('posts.index', ['post' => $post, 'user' => $user]) }}">
+        <p class="font-normal text-blue text-sm text-center italic">{{ $post->user->username }}</p>
+    </a>
+    
     <p class="text-sm font-extralight text-gray">posteó esto hace {{ $post->created_at->diffForHumans() }}</p>  
-                
+                    
 </div>
 
 <div class="container flex justify-center mx-auto md:flex">
