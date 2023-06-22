@@ -13,7 +13,7 @@ class ComentarioController extends Controller
     {
         //Validar
         $this->validate($request, [
-            'comentario'=>'required|max:255'
+            'comentario'=>'required|max:355'
         ]);
 
         //Almacena
@@ -24,6 +24,6 @@ class ComentarioController extends Controller
         ]);
 
         //Despliegue
-        return back()->with("mensaje",'Comentario realizado correctamente');
+        return back()->with("mensaje",'Gracias por dejar tu comentario');
     }
 }
